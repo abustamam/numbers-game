@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Numbers Game</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="container-fluid">
+    <div class = "row text-center">
+      <h1>
+        Numbers Game <br>
+        <small>Are you smarter than a program?</small>
+      </h1>
+    </div>
+    <div class = "row">
+      <div class="col-md-4 col-md-offset-4">
+        <p class='text-center'><strong>Rules:</strong></p>
+        <ol>
+          <li>There are two players.</li>
+          <li>Each player writes a number, hidden from the other player. It can be any integer 1 or greater.</li>
+          <li>The players reveal their numbers.</li>
+          <li>Whoever chose the lower number gets 1 point, unless the lower number is lower by only 1, then the player with the higher number gets 2 points.</li>
+          <li>If they both chose the same number, neither player gets a point.</li>
+          <li>This repeats, and the game ends when one player has 5 points.</li>
+        </ol>
+        <hr>
+        <div id="data">
+          <p>Player moves: <span id="playerMoves"></span></p>
+          <p>CPU moves: <span id="cpuMoves"></span></p>
+          <p>Player score: <span id="playerScore"></span></p>
+          <p>CPU score: <span id="cpuScore"></span></p>
+        </div>
+        <br>
+        <div>
+          <h3><strong>Enter an integer greater than 0:</strong></h3>
+        </div>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="">
+          <span class="input-group-addon">Go!</span>
+        </div>
+        <br>
+        <button id="new" class="btn btn-lg btn-primary">New Game!</button>
+      </div>
+
+
+    </div>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
