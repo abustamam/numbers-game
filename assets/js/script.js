@@ -4,22 +4,25 @@
   }
 
   Game.prototype.start = function() {
-      var cpu = prompt("Play against computer? y/n").toLowerCase();
+      // var cpu = prompt("Play against computer? y/n").toLowerCase();
 
       this.player1 = new Player();
-      this.player2 = cpu == "y" ? new Cpu() : new Player();
+      // this.player2 = cpu == "y" ? new Cpu() : new Player();
+      this.player2 = new Cpu();
 
-      console.log("Players: " + this.player1 + " " + this.player2);
       this.moveNum = 0;
 
-      while ((this.player1.score < 5 && this.player2.score < 5) || this.moveNum < 5) {
-          this.move();
-          this.moveNum++;
-      }
+      // while ((this.player1.score < 5 && this.player2.score < 5) || this.moveNum < 5) {
+      //     this.move();
+      //     this.moveNum++;
+      // }
+
+      $(".data").text("");
 
   };
 
   Game.prototype.move = function() {
+      console.log("move");
       var n1 = this.player1.move();
       var n2 = this.player2.move();
 
@@ -38,11 +41,12 @@
           console.log("4");
           this.player2.score++;
       }
+      $("#playerMoves").text(this.player1.moves);
+      $("#cpuMoves").text(this.player2.moves);
+      $("#playerScore").text(this.player1.score);
+      $("#cpuScore").text(this.player2.score);
 
-      console.log("Player 1 moves: " + this.player1.moves);
-      console.log("Player 2 moves: " + this.player2.moves);
-      console.log("Player 1 score: " + this.player1.score);
-      console.log("Player 2 score: " + this.player2.score);
+      this.moveNum++;
   };
 
   function Player() {
@@ -51,8 +55,9 @@
   }
 
   Player.prototype.move = function() {
-      var n = Number(prompt("Enter an integer greater than 0"));
+      var n = Number($("#move").val());
       this.moves.push(n);
+      $("#move").val("");
       return n;
   };
 
@@ -96,6 +101,15 @@
   };
 
   var game = new Game();
-  //game.start();
+  game.start();
+
+  $("#new").click(function(e){
+    game.start();
+  })
+
+  $("#go").click(function(e){
+    console.log("click");
+    game.move();
+  })
 
 })()

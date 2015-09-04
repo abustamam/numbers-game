@@ -37,21 +37,23 @@
         </ol>
         <hr>
         <div id="data">
-          <p>Player moves: <span id="playerMoves"></span></p>
-          <p>CPU moves: <span id="cpuMoves"></span></p>
-          <p>Player score: <span id="playerScore"></span></p>
-          <p>CPU score: <span id="cpuScore"></span></p>
+          <p>Player moves: <span class="data" id="playerMoves"></span></p>
+          <p>CPU moves: <span class="data" id="cpuMoves"></span></p>
+          <p>Player score: <span class="data" id="playerScore"></span></p>
+          <p>CPU score: <span class="data" id="cpuScore"></span></p>
         </div>
         <br>
         <div>
           <h3><strong>Enter an integer greater than 0:</strong></h3>
         </div>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="">
-          <span class="input-group-addon">Go!</span>
+          <input id="move" type="text" class="form-control" placeholder="">
+          <span class="input-group-addon"><button id="go" type="button" class="btn btn-sm">
+            Go!
+          </button></span>
         </div>
         <br>
-        <button id="new" class="btn btn-lg btn-primary">New Game!</button>
+        <button type="button" id="new" class="btn btn-lg btn-primary">New Game!</button>
       </div>
 
 
@@ -64,5 +66,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
