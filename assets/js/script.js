@@ -69,32 +69,36 @@
 
   Cpu.prototype.move = function() {
       var n;
+      // array containing move list
+      // moveList[i][j] where i is moveNum and j is
+      var moveList = []
+
       if (game.moveNum === 0) {
           // choose 1 as starting point
           n = 1;
       } else if (game.moveNum == 1){
           // if player predicted 1 as first move
           if (game.player1.moves[0] == "2") {
-              // predict 1 as player's next move
-              n = 2;
-          // if player tried 1 as starting point as well, he is getting to know me
-          } else if (game.player1.moves[0] == "1") {
               // predict 2 as player's next move
               n = 3;
+          // if player tried 1 as starting point as well, he is getting to know me
+          } else if (game.player1.moves[0] == "1") {
+              // predict 1 as player's next move
+              n = 2;
           } else {
               n = 1;
           }
       } else if (game.moveNum == 2) {
           // player1 is as smart as me
           if (game.player1.score === 0 && this.score === 0) {
-              n = 1;
+              n = 3;
           } else {
               // fallback
               n = 2;
           }
       } else {
           // fallback
-          n = 1;
+          n = 2;
       }
       this.moves.push(n);
       return n;
