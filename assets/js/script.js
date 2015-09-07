@@ -69,9 +69,6 @@
 
   Cpu.prototype.move = function() {
       var n;
-      // array containing move list
-      // moveList[i][j] where i is moveNum and j is
-      var moveList = []
 
       if (game.moveNum === 0) {
           // choose 1 as starting point
@@ -96,9 +93,17 @@
               // fallback
               n = 2;
           }
+      } else if (game.moveNum == 3) {
+        if (game.player1.moves[2] == "2") {
+            n = 3;
+        } else if (game.player1.moves[2] == "1") {
+            // predict 1 as player's next move
+            n = 2;
+        } else {
+            n = 1;
+        }
       } else {
-          // fallback
-          n = 2;
+        n = 2;
       }
       this.moves.push(n);
       return n;
